@@ -293,15 +293,27 @@ header i {
   }
 }
 
+
+
 @media (max-width:768px) {
   header h2 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   header p {
-    font-size: 18px;
+    font-size: 20px;
+    margin-bottom: 50px;
   }
 
+  header img {
+    width: 500px
+  }
+}
+
+@media (max-width:400px) {
+  header img {
+    width: 300px
+  }
 }
 
 @media (max-width:1199px) {
