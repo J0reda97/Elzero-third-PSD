@@ -40,7 +40,6 @@ html {
 
 body {
   font-family: 'Cairo', sans-serif;
-  overflow: hidden;
 }
 
 ul {
@@ -60,6 +59,86 @@ a {
   text-decoration: none;
 }
 
+.main-heading {
+  text-transform: uppercase;
+  font-size: 30px;
+  width: fit-content;
+  margin: 0 auto 100px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  position: relative;
+  transition: 0.5s;
+}
+
+
+.main-heading::before,
+.main-heading::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--main-color);
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  z-index: -1;
+
+}
+
+.main-heading::before {
+  left: -30px;
+}
+
+.main-heading::after {
+  right: -30px;
+}
+
+.main-heading:hover::before {
+  animation: leftmove 0.5s linear forwards;
+}
+
+.main-heading:hover::after {
+  animation: rightmove 0.5s linear forwards;
+}
+
+@keyframes leftmove {
+  50% {
+    left: 0;
+    width: 15px;
+    height: 15px;
+  }
+
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@keyframes rightmove {
+  50% {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    right: 0;
+  }
+
+  100% {
+    width: 50%;
+    height: 100%;
+    border-radius: 0%;
+    right: 0;
+  }
+}
+
+.main-heading:hover {
+  transition-delay: 0.5s;
+  color: white;
+  border: 2px solid white;
+}
+
 /* navbar */
 
 nav .container {
@@ -68,6 +147,7 @@ nav .container {
   align-items: center;
   background-color: white;
   position: relative;
+  height: 73px;
 }
 
 nav .links>ul li a {
@@ -82,6 +162,8 @@ nav .links>ul li a {
 }
 
 nav h1 {
+  margin: 0;
+  padding: 0 15px;
   color: var(--main-color);
 }
 
@@ -123,7 +205,7 @@ nav .mega {
   justify-content: space-between;
   border-bottom: 3px solid var(--main-color);
   border-top: 1px solid #eee;
-  padding: 50px 0;
+  padding: 50px 25px;
   opacity: 0;
   transition: 0.5s;
   z-index: 0;
@@ -174,7 +256,7 @@ nav .mega ul li i {
 
 nav .links>ul li:last-child:hover .mega {
   opacity: 1;
-  top: 80px;
+  top: 73px;
   z-index: 5;
 }
 
@@ -193,15 +275,17 @@ nav .links>ul li:last-child:hover .mega {
     padding: 10px;
   }
 
+  nav .links>ul li a::before {
+    height: 3px;
+  }
 
+  nav .mega ul li a::before {
+    height: 100%
+  }
 
   nav .links>ul li:last-child:hover .mega {
     opacity: 1;
-    top: 77px;
-  }
-
-  nav .mega ul li {
-    margin: 0 5px;
+    top: 73px;
   }
 
   nav .mega ul:first-of-type li:last-child {
@@ -223,11 +307,9 @@ nav .links>ul li:last-child:hover .mega {
 
 /* Header */
 
-
-
 header {
   position: relative;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 73px);
   overflow: hidden;
   z-index: 1;
 
@@ -326,4 +408,58 @@ header i {
     text-align: center;
     margin-bottom: 25px
   }
+}
+
+
+/* Articles */
+
+.card-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+}
+
+.card-holder .card {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  transition: 0.5s;
+
+}
+
+.card-holder .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+}
+
+.card-holder .card img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.card-holder .card .text {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-holder .card .text p {
+  margin: 10px 0;
+  color: #777;
+  line-height: 1.5;
+}
+
+.card-holder .card .read {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-holder .card:hover .read i {
+  animation: slideInLeft 1s infinite;
+}
+
+.card-holder .card .read i,
+.card-holder .card .read a {
+  color: var(--main-color);
+  font-weight: 900;
 }
