@@ -68,6 +68,7 @@ a {
   border: 2px solid black;
   position: relative;
   transition: 0.5s;
+  z-index: 1;
 }
 
 
@@ -83,7 +84,6 @@ a {
   transform: translateY(-50%);
   transition: 0.5s;
   z-index: -1;
-
 }
 
 .main-heading::before {
@@ -112,7 +112,7 @@ a {
   100% {
     left: 0;
     border-radius: 0;
-    width: 50%;
+    width: 51%;
     height: 100%;
   }
 }
@@ -126,7 +126,7 @@ a {
   }
 
   100% {
-    width: 50%;
+    width: 51%;
     height: 100%;
     border-radius: 0%;
     right: 0;
@@ -209,7 +209,12 @@ nav .mega {
   opacity: 0;
   transition: 0.5s;
   z-index: 0;
+  overflow: hidden;
   background-color: white;
+}
+
+nav .mega img {
+  width: 40%;
 }
 
 nav .mega ul li a {
@@ -462,4 +467,66 @@ header i {
 .card-holder .card .read a {
   color: var(--main-color);
   font-weight: 900;
+}
+
+/* Gallery */
+
+#gallery {
+  background-color: #ECECEC;
+}
+
+#gallery .img-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 50px;
+}
+
+#gallery .img-container .img {
+  border: 15px solid white;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+}
+
+#gallery .img-container .img img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+#gallery .img-container .img:hover img {
+  scale: 1.1;
+  rotate: 5deg;
+}
+
+#gallery .img-container .img::after {
+  content: '';
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+
+#gallery .img-container .img:hover::after {
+  animation: flashing 0.5s linear;
+}
+
+@keyframes flashing {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
 }
