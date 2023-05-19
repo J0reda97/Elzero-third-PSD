@@ -10,29 +10,34 @@
   margin: auto;
 }
 
-@media (max-width:600px) {
+/* Extra small */
+@media (max-width: 767px) {
   .container {
-    width: 90%
+    width: 90%;
   }
 }
 
-@media (min-width: 600px) {
+/* Small */
+@media (min-width: 768px) {
   .container {
-    width: 85%
+    width: 750px;
   }
 }
 
+/* Medium */
 @media (min-width: 992px) {
   .container {
-    width: 80%
+    width: 970px;
   }
 }
 
+/* Large */
 @media (min-width: 1200px) {
   .container {
-    width: 75%
+    width: 1170px;
   }
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -164,6 +169,7 @@ nav .links>ul li a {
 nav h1 {
   margin: 0;
   padding: 0 15px;
+  cursor: pointer;
   color: var(--main-color);
 }
 
@@ -202,19 +208,19 @@ nav .mega {
   width: 100%;
   left: 0;
   top: 200px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-bottom: 3px solid var(--main-color);
   border-top: 1px solid #eee;
-  padding: 50px 25px;
+  padding: 50px 0;
   opacity: 0;
-  transition: 0.5s;
+  transition: 1s;
   z-index: 0;
   overflow: hidden;
   background-color: white;
 }
 
 nav .mega img {
-  width: 40%;
+  width: 30%;
 }
 
 nav .mega ul li a {
@@ -244,7 +250,7 @@ nav .mega ul li a::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   transition: 0.5s;
   z-index: -1;
 }
@@ -304,7 +310,7 @@ nav .links>ul li:last-child:hover .mega {
 
 }
 
-@media (max-width:991px) {
+@media (max-width:1200px) {
   nav .mega img {
     display: none;
   }
@@ -359,7 +365,7 @@ header p {
 header i {
   color: var(--main-color);
   position: absolute;
-  bottom: 50px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
@@ -389,7 +395,7 @@ header i {
 
   header p {
     font-size: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
 
   header img {
@@ -406,7 +412,7 @@ header i {
 @media (max-width:1199px) {
   header .container {
     flex-direction: column;
-    padding: 50px 0;
+    padding: 25px 0;
   }
 
   header .text {
@@ -460,6 +466,7 @@ header i {
 }
 
 .card-holder .card:hover .read i {
+  cursor: pointer;
   animation: slideInLeft 1s infinite;
 }
 
@@ -479,6 +486,12 @@ header i {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 50px;
+}
+
+@media (min-width:1200px) {
+  #gallery .img-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 #gallery .img-container .img {
@@ -529,4 +542,175 @@ header i {
     height: 200%;
     opacity: 0;
   }
+}
+
+/* Features */
+#features .feat-box {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+#features .feat {
+  border: 1px solid #ccc;
+}
+
+#features .feat .img {
+  position: relative;
+  overflow: hidden;
+}
+
+#features .feat .img img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+#features .feat .img::before {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#features .feat .img::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  transition: 0.3s;
+  border-style: solid;
+  border-width: 0px 0px 170px 500px;
+  border-color: transparent transparent white transparent;
+
+}
+
+#features .feat .img:hover::after {
+  border-width: 0px 500px 170px 0px;
+  border-color: transparent transparent white transparent;
+}
+
+#features .feat:first-child .img::before {
+  background-color: rgba(244, 64, 54, 0.5);
+}
+
+#features .feat:nth-child(2) .img::before {
+  background-color: rgba(0, 150, 136, 0.5);
+}
+
+#features .feat:last-child .img::before {
+  background-color: rgba(3, 169, 244, 0.5);
+}
+
+#features .feat .text {
+  text-align: center;
+  padding: 25px;
+}
+
+#features .feat .text h3 {
+  width: fit-content;
+  font-size: 40px;
+  margin: auto;
+  position: relative;
+}
+
+#features .feat .text h3::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  bottom: -15px;
+  width: calc(100% - 30px);
+  height: 5px;
+}
+
+#features .feat:first-child h3::after {
+  background-color: rgb(244, 64, 54);
+}
+
+#features .feat:nth-child(2) h3::after {
+  background-color: rgb(0, 150, 136);
+}
+
+#features .feat:last-child h3::after {
+  background-color: rgb(3, 169, 244);
+}
+
+#features .feat .text p {
+  margin: 50px 0;
+  font-size: 20px;
+  color: #777;
+  line-height: 2;
+}
+
+@media (max-width:767px) {
+  #features .feat .text p {
+    font-size: 16px;
+  }
+}
+
+#features .feat .text a {
+  width: fit-content;
+  display: block;
+  margin: auto;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 3px;
+  padding: 5px 25px;
+  font-size: 25px;
+  font-weight: 900;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+#features .feat .text a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+
+
+#features .feat .text a:hover::before {
+  left: 0;
+}
+
+#features .feat:first-child .text a {
+  color: rgb(244, 64, 54);
+  border-color: rgb(244, 64, 54);
+}
+
+#features .feat:nth-child(2) .text a {
+  color: rgb(0, 150, 136);
+  border-color: rgb(0, 150, 136);
+}
+
+#features .feat:last-child .text a {
+  color: rgb(3, 169, 244);
+  border-color: rgb(3, 169, 244);
+}
+
+#features .feat .text a:hover {
+  color: white;
+}
+
+#features .feat:first-child .text a::before {
+  background-color: rgb(244, 64, 54);
+}
+
+#features .feat:nth-child(2) .text a::before {
+  background-color: rgb(0, 150, 136);
+}
+
+#features .feat:last-child .text a::before {
+  background-color: rgb(3, 169, 244);
 }
