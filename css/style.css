@@ -1152,3 +1152,136 @@ header i:hover {
     text-align: center;
   }
 }
+
+/* event */
+
+#event .event {
+  display: flex;
+  gap: 50px;
+}
+
+#event .event img {
+  width: 450px;
+}
+
+#event .event .text {
+  text-align: center;
+}
+
+#event .event .text h3 {
+  font-size: 35px;
+  margin: 25px 0;
+}
+
+#event .event .text .timer {
+  width: 80px;
+  height: 140px;
+  text-align: center;
+  display: inline-block;
+  color: var(--main-color);
+  font-size: 50px;
+  font-weight: 900;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  line-height: 2;
+  margin: 25px 5px;
+  transition: 0.5s;
+}
+
+#event .event .text .timer:hover {
+  border-color: var(--main-color);
+}
+
+#event .event .text .timer:hover span {
+  border-color: var(--main-color);
+}
+
+#event .event .text .timer span {
+  width: 100%;
+  color: black;
+  font-size: 14px;
+  display: block;
+  font-weight: 400;
+  height: 40px;
+  border-top: 1px solid #ddd;
+  transition: 0.5s;
+}
+
+#event .event .text p {
+  color: #777;
+  font-size: 18px;
+}
+
+#event .mail {
+  display: flex;
+  gap: 25px;
+  margin: 50px auto;
+  width: 700px;
+  padding: 25px 35px;
+  align-items: center;
+  border-radius: 75px;
+  background-color: #F6F5F5;
+  height: 125px;
+  justify-content: center;
+}
+
+#event .mail input[type="email"] {
+  outline: none;
+  border: none;
+  height: 75px;
+  padding: 25px;
+  border-radius: 50px;
+  caret-color: var(--main-color);
+  flex: 3;
+}
+
+#event .mail input[type="submit"] {
+  outline: none;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  height: 75px;
+  padding: 25px;
+  border-radius: 50px;
+  font-size: 25px;
+  font-weight: 900;
+  flex: 1;
+  cursor: pointer;
+}
+
+@media (max-width:991px) {
+
+  #event .event {
+    flex-direction: column;
+  }
+
+  #event .event .img {
+    margin: auto;
+  }
+
+  #event .event .img img {
+    max-width: 100%;
+  }
+
+  #event .mail {
+    width: 90%;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  #event .mail input[type="submit"] {
+
+    width: 100%;
+  }
+
+  #event .mail input[type="email"] {
+    width: 100%;
+  }
+
+}
+
+@media (max-width:600px) {
+  #event .mail input {
+    padding: 15px;
+  }
+}
