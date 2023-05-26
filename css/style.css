@@ -1249,6 +1249,15 @@ header i:hover {
   cursor: pointer;
 }
 
+#event .mail input[type="email"]::placeholder {
+  transition: 0.5s;
+  opacity: 1
+}
+
+#event .mail input[type="email"]:focus::placeholder {
+  opacity: 0;
+}
+
 @media (max-width:991px) {
 
   #event .event {
@@ -1269,11 +1278,7 @@ header i:hover {
     height: fit-content;
   }
 
-  #event .mail input[type="submit"] {
-
-    width: 100%;
-  }
-
+  #event .mail input[type="submit"],
   #event .mail input[type="email"] {
     width: 100%;
   }
@@ -1284,4 +1289,143 @@ header i:hover {
   #event .mail input {
     padding: 15px;
   }
+}
+
+/* plans */
+
+#plans {
+  background-color: #ECECEC;
+}
+
+#plans .plans {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+#plans .plans .plan {
+  text-align: center;
+  background-color: white;
+  padding: 25px 0;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  border: 1px solid #ddd;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#plans .plans .plan:nth-child(2) {
+  transform: translateY(-25px);
+}
+
+@media (max-width:1199px) {
+  #plans .plans .plan:nth-child(2) {
+    transform: translateY(0);
+  }
+}
+
+#plans .plans .plan::after,
+#plans .plans .plan::before {
+  content: '';
+  height: 50%;
+  width: 0;
+  position: absolute;
+  background-color: #F6F6F6;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+#plans .plans .plan::before {
+  top: 0;
+  left: 0;
+}
+
+#plans .plans .plan::after {
+  bottom: 0;
+  right: 0;
+}
+
+#plans .plans .plan:hover::before,
+#plans .plans .plan:hover::after {
+  width: 100%;
+}
+
+#plans .plans .plan:hover .mark {
+  border-color: transparent #F6F6F6 transparent transparent;
+}
+
+#plans .plans .plan .mark {
+  position: absolute;
+  background-color: var(--main-color);
+  color: white;
+  width: 150px;
+  height: 40px;
+  transform: rotate(90deg);
+  top: 55px;
+  right: -25px;
+  font-weight: 900;
+  text-align: left;
+  font-size: 18px;
+  border-color: transparent white transparent transparent;
+  border-width: 20px 20px 20px 10px;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+#plans .plans .plan h3 {
+  font-weight: 900;
+  font-size: 25px;
+}
+
+#plans .plans .plan img {
+  width: 75px;
+  margin: 25px;
+}
+
+#plans .plans .plan span {
+  display: block;
+  color: var(--main-color);
+  font-size: 50px;
+  font-weight: 900;
+
+}
+
+#plans .plans .plan h4 {
+  color: #777;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+#plans .plans .plan li {
+  text-align: left;
+  padding: 25px;
+  border-top: 1px solid #ddd;
+}
+
+#plans .plans .plan li::before {
+  content: '\f00c';
+  font-weight: 900;
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 10px;
+  color: var(--main-color);
+}
+
+#plans .plans .plan a {
+  display: block;
+  width: fit-content;
+  margin: 25px auto 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--main-color);
+  border: 3px solid var(--main-color);
+  font-weight: 900;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+
+#plans .plans .plan a:hover {
+  color: white;
+  background-color: var(--main-color);
 }
