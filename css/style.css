@@ -77,6 +77,11 @@ a {
   z-index: 1;
 }
 
+@media (max-width:600px) {
+  .main-heading {
+    font-size: 25px;
+  }
+}
 
 .main-heading::before,
 .main-heading::after {
@@ -366,7 +371,7 @@ header p {
 header i {
   color: var(--main-color);
   position: absolute;
-  bottom: 25px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
@@ -660,7 +665,7 @@ header i:hover {
 #features .feat .text a {
   width: fit-content;
   display: block;
-  margin: auto;
+  margin: 0 auto 25px;
   border-style: solid;
   border-radius: 5px;
   border-width: 3px;
@@ -1188,6 +1193,14 @@ header i:hover {
   transition: 0.5s;
 }
 
+@media (max-width:600px) {
+  #event .event .text .timer {
+    width: 70px;
+    font-size: 45px;
+  }
+
+}
+
 #event .event .text .timer:hover {
   border-color: var(--main-color);
 }
@@ -1247,6 +1260,18 @@ header i:hover {
   font-weight: 900;
   flex: 1;
   cursor: pointer;
+}
+
+@media (max-width:600px) {
+  #event .mail {
+    padding: 15px 25px;
+    border-radius: 35px
+  }
+
+  #event .mail input[type="email"],
+  #event .mail input[type="submit"] {
+    padding: 15px;
+  }
 }
 
 #event .mail input[type="email"]::placeholder {
@@ -1428,4 +1453,134 @@ header i:hover {
 #plans .plans .plan a:hover {
   color: white;
   background-color: var(--main-color);
+}
+
+/* videos */
+
+#videos .videos {
+  display: flex;
+  border: 1px solid #ddd;
+}
+
+@media (max-width:991px) {
+  #videos .videos {
+    flex-direction: column;
+  }
+}
+
+#videos .videos .list {
+  min-width: 300px
+}
+
+#videos .videos .title {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F4F4F4;
+}
+
+#videos .videos .name {
+  padding: 25px;
+  transition: 0.5s;
+  cursor: pointer;
+  border-top: 1px solid #ddd;
+}
+
+#videos .videos .name:hover {
+  background-color: #FAFAFA;
+}
+
+#videos .videos .name p {
+  transition: 0.5s;
+}
+
+#videos .videos .name:hover p {
+  color: var(--main-color);
+}
+
+#videos .videos .name span {
+  color: #777;
+}
+
+#videos .videos .video {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #E2E2E2;
+}
+
+#videos .videos .video img {
+  max-width: 100%;
+}
+
+#videos .videos .video .text {
+  padding: 25px;
+  background-color: white;
+}
+
+/* stats */
+
+#stats {
+  background-color: #ECECEC;
+}
+
+#stats .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 25px;
+}
+
+#stats .stats .stat {
+  flex: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  background-color: white;
+  position: relative;
+}
+
+#stats .stats .stat i {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+#stats .stats .stat span {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+#stats .stats .stat p {
+  color: var(--main-color);
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#stats .stats .stat::before,
+#stats .stats .stat::after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 3px;
+  background-color: var(--main-color);
+  transition: 0.5s;
+}
+
+#stats .stats .stat::before {
+  top: 0;
+  left: 0;
+}
+
+#stats .stats .stat::after {
+  bottom: 0;
+  right: 0;
+}
+
+#stats .stats .stat:hover::before,
+#stats .stats .stat:hover::after {
+  height: 100%;
 }
