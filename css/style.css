@@ -54,7 +54,6 @@ ul {
 
 :root {
   --main-color: #2196F3;
-  --main-color: #1787E0;
 }
 
 section {
@@ -371,7 +370,7 @@ header p {
 header i {
   color: var(--main-color);
   position: absolute;
-  bottom: 50px;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
@@ -1523,7 +1522,8 @@ header i:hover {
 /* stats */
 
 #stats {
-  background-color: #ECECEC;
+  background: linear-gradient(rgba(236, 236, 236, 0.95), rgba(236, 236, 236, 0.95)), url('https://img.freepik.com/premium-photo/global-data-connection-technology-concept-with-screen-texture-abstract-global-stats-data-digital-interface-world-map-dark-technological-background-hud-template-3d-rendering_670147-22250.jpg');
+  background-size: cover;
 }
 
 #stats .stats {
@@ -1611,7 +1611,35 @@ header i:hover {
 
 #discount .text {
   color: white;
+  position: relative;
+  z-index: 0;
+  animation: changebackground 10s infinite;
+  background-size: cover;
+}
+
+@keyframes changebackground {
+
+  0%,
+  100% {
+    background-image: url('https://img.freepik.com/premium-vector/seamless-pattern-with-numbers-school-design_601658-353.jpg');
+  }
+
+  50% {
+    background-image: url('https://img.freepik.com/premium-vector/big-sale-background-promotion_8499-1288.jpg');
+  }
+
+}
+
+#discount .text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--main-color);
+  z-index: -1;
+  opacity: 0.97;
 }
 
 #discount h3 {
@@ -1656,6 +1684,23 @@ header i:hover {
   background-color: var(--main-color);
 }
 
+@media (max-width:600px) {
+
+  #discount .form input,
+  #discount .form textarea {
+    width: 90%;
+  }
+
+  #discount h3 {
+    font-size: 25px;
+  }
+
+  #discount .text p {
+    font-size: 16px;
+
+  }
+}
+
 /* footer */
 
 footer {
@@ -1686,13 +1731,52 @@ footer .footer span {
   margin: 25px 0;
 }
 
-footer .footer span:nth-of-type(2) {
-  margin: 0 5px;
+footer .footer span:first-of-type:hover {
+  background-color: #1877f2;
 }
 
+footer .footer span:last-of-type:hover {
+  background-color: #ff0000;
+}
+
+footer .footer span:nth-of-type(2) {
+  margin: 0 5px;
+
+}
+
+footer .footer span:nth-of-type(2):hover {
+  background-color: #1da1f2;
+}
+
+
 footer .footer i,
+footer .footer li a,
 footer .footer p {
   color: #b9b9b9;
+}
+
+footer .footer li a {
+  display: block;
+  padding: 20px 0;
+  transition: 0.5s;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+footer .footer li:last-of-type a {
+  border: none;
+}
+
+footer .footer li a::before {
+  content: '\f101';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 10px;
+  color: var(--main-color);
+}
+
+footer .footer li a:hover {
+  color: white;
+  padding-left: 15px;
 }
 
 footer .footer .img-container {
@@ -1700,6 +1784,7 @@ footer .footer .img-container {
   flex-wrap: wrap;
   gap: 10px;
   height: fit-content;
+  width: 255px;
 }
 
 footer .footer img {
@@ -1710,4 +1795,31 @@ footer .footer img {
 
 footer .footer p {
   line-height: 2;
+}
+
+footer .part {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+footer .part .icon {
+  width: 25px;
+}
+
+footer .part i {
+  font-size: 25px;
+  color: var(--main-color);
+}
+
+@media (max-width:600px) {
+  footer .footer .box {
+    margin: auto;
+    text-align: center;
+  }
+
+  footer .footer .box:nth-child(2) {
+    width: 50%;
+  }
 }
