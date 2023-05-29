@@ -1734,7 +1734,7 @@ header i:hover {
 /* footer */
 
 footer {
-  padding: 50px 0;
+  padding-top: 50px;
   background-color: #191919;
 }
 
@@ -1852,4 +1852,11 @@ footer .part i {
   footer .footer .box:nth-child(2) {
     width: 50%;
   }
+}
+
+footer>p {
+  text-align: center;
+  color: #b9b9b9;
+  padding: 25px;
+  border-top: 1px solid #b9b9b9;
 }
