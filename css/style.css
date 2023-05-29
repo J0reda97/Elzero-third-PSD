@@ -63,6 +63,40 @@ body {
   counter-reset: span-counter;
 }
 
+.spikes {
+  position: relative;
+}
+
+.spikes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+
+.dots {
+  position: absolute;
+  width: 190px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-image: url('https://elzerowebschool.github.io/HTML_And_CSS_Template_Three/imgs/dots.png');
+}
+
+.up {
+  top: 200px;
+  right: 0;
+}
+
+.down {
+  bottom: 200px;
+  left: 0;
+}
+
 ul {
   list-style: none;
 }
@@ -1189,6 +1223,10 @@ header i:hover {
 
 /* event */
 
+#event {
+  position: relative;
+}
+
 #event .event {
   display: flex;
   gap: 50px;
@@ -1349,6 +1387,7 @@ header i:hover {
 
 #plans {
   background-color: #ECECEC;
+  position: relative;
 }
 
 #plans .plans {
