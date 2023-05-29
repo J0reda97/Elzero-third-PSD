@@ -1584,3 +1584,130 @@ header i:hover {
 #stats .stats .stat:hover::after {
   height: 100%;
 }
+
+/* discount */
+
+#discount {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+#discount .text,
+#discount .form {
+  flex-basis: 50%;
+  padding: 50px;
+  text-align: center;
+}
+
+@media (max-width:991px) {
+
+  #discount .text,
+  #discount .form {
+    flex-basis: 100%;
+  }
+}
+
+#discount .text {
+  color: white;
+  background-color: var(--main-color);
+}
+
+#discount h3 {
+  font-size: 35px;
+  margin: 25px 0;
+}
+
+#discount .text p {
+  margin: 50px 0 25px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+#discount .text img {
+  width: 60%;
+}
+
+#discount .form input,
+#discount .form textarea {
+  width: 60%;
+  padding: 25px;
+  background-color: #F9F9F9;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #777;
+  margin-top: 25px;
+  height: 30px;
+  caret-color: var(--main-color);
+}
+
+#discount .form textarea {
+  height: 200px;
+}
+
+#discount .form input[type="submit"] {
+  color: white;
+  font-weight: 900;
+  font-size: 25px;
+  padding: 0;
+  height: 50px;
+  cursor: pointer;
+  background-color: var(--main-color);
+}
+
+/* footer */
+
+footer {
+  padding: 50px 0;
+  background-color: #191919;
+}
+
+footer .footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 50px
+}
+
+footer .footer h3 {
+  color: white;
+  font-size: 50px;
+}
+
+footer .footer span {
+  background-color: #313131;
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 25px 0;
+}
+
+footer .footer span:nth-of-type(2) {
+  margin: 0 5px;
+}
+
+footer .footer i,
+footer .footer p {
+  color: #b9b9b9;
+}
+
+footer .footer .img-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: fit-content;
+}
+
+footer .footer img {
+  width: 75px;
+  height: 75px;
+  border: 3px solid white;
+}
+
+footer .footer p {
+  line-height: 2;
+}
