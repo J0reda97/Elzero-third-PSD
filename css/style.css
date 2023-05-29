@@ -396,6 +396,15 @@ header i {
   header i {
     bottom: 20%;
   }
+
+  header h2 {
+    margin-top: 50px
+  }
+
+  header p {
+    margin-bottom: 100px
+  }
+
 }
 
 header i:hover {
