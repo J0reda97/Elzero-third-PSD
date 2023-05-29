@@ -43,6 +43,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #E2E2E2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
 body {
   font-family: 'Cairo', sans-serif;
   counter-reset: span-counter;
@@ -375,6 +390,12 @@ header i {
   transform: translateX(-50%);
   animation: bounce 2s infinite;
   animation-play-state: running;
+}
+
+@media (max-width:400px) {
+  header i {
+    bottom: 20%;
+  }
 }
 
 header i:hover {
